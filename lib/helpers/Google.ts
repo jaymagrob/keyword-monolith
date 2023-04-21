@@ -1,18 +1,6 @@
 import GetBase from "./GetBase";
 
 export default class GetGoogle extends GetBase {
-  url: (query: string) => string;
-
-  country: string;
-
-  keyword: string;
-
-  language: string;
-
-  headers: object;
-
-  formatter: (data: object) => object | Error;
-
   constructor(keyword: string, country: string, language: string) {
     super(keyword, country, language);
 

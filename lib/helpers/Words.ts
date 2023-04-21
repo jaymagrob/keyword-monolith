@@ -1,5 +1,5 @@
 export default class Words {
-  static promiseLooper(array, word, promise, before = false) {
+  static promiseLooper(array: any[], word: string, promise: (string: string) => Promise<any>, before = false) {
     return array.map(async (i) => ({
       key: i,
       data: await promise(
@@ -8,7 +8,7 @@ export default class Words {
     }));
   }
 
-  static async getWords(word, promise) {
+  static async getWords(word: string, promise: (string: string) => Promise<any>) {
     const dataAfter = [""];
     const alphaAfter = [
       "a",

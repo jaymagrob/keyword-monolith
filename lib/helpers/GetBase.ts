@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default class GetBase {
-  url: (query?: string) => string;
+  url: (query: string) => string;
 
   country: string;
 
