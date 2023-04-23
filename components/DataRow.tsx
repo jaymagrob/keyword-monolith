@@ -22,14 +22,14 @@ export default function DataRow(props: Props) {
       <h1>{header}</h1>
       <div>
         {results.map(letter => (
-          <>
+          <div key={letter.key}>
             <h2>
               {letter.key}
             </h2>
             <div>
               {letter.data.map(i => <div key={i}>{i}</div>)}
             </div>
-          </>
+          </div>
         ))}
       </div>
     </div>
