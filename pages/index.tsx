@@ -1,11 +1,10 @@
-import { Inter } from 'next/font/google'
 import { useState } from 'react'
-
-const inter = Inter({ subsets: ['latin'] })
+import Data, { Data as DataType } from '../components/Data';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [keyword, setKeyword] = useState('');
+  const [data, setData] = useState(null);
 
   return (
     <>
@@ -24,12 +23,20 @@ export default function Home() {
             },
           })
             .then(i => i.json())
-            .then(i => console.log(i))
+            .then((i) => {
+              setData(i)
+              console.log(i)
+            })
             .finally(() => setIsLoading(false))
-          }
+        }
         }
       >click</button>
       {isLoading && <h2>Is Loading....</h2>}
+      {data && (
+        <main>
+          <Data data={data as DataType}/>
+        </main>
+      )}
     </>
   )
 }
