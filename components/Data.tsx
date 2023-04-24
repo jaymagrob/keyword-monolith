@@ -31,7 +31,7 @@ export default function Data(props: { data: Data | null }) {
   } = props.data;
 
   return (
-    <div>
+    <div className="results-0">
       <DataRaw header="alpha" results={alpha} />
       <DataRaw header="comparisons" results={comparisons} />
       <DataRaw header="data" results={data} />

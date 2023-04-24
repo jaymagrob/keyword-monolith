@@ -18,11 +18,11 @@ export default function DataRow(props: Props) {
   } = props;
 
   return (
-    <div>
-      <h1>{header}</h1>
-      <div>
+    <div className="results-1">
+      <h2>{header}</h2>
+      <div className="results-2">
         {results.map(letter => (
-          <div key={letter.key}>
+          <div key={letter.key} className="results-3">
             <h2>
               {letter.key}
             </h2>

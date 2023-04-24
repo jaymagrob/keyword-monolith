@@ -25,3 +25,25 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+main .results-0 {
+  margin: 5px;
+  /* background-color: red; */
+}
+
+main .results-1 {
+  margin: 5px;
+  /* background-color: blue; */
+}
+
+main .results-2 {
+  display: flex;
+  flex-wrap: wrap;
+  /* width: calc(100vw - 100px); */
+  gap: 30px;
+  justify-content: space-evenly;
+}
+
+main .results-3 {
+  width: 200px;
+}
