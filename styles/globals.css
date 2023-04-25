@@ -3,27 +3,28 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --background: #fffffe;
+  --headline: #094067;
+  --paragraph: #5f6c7b;
+  --button: #3da9fc;
+  --button-text: #fffffe;
+  --stroke: #094067;
+  --main: #fffffe;
+  --highlight: #3da9fc;
+  --secondary: #90b4ce;
+  --tertiary: #ef4565;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--paragraph);
+  background: var(--background);
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: proxima-nova, sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: 400;
 }
 
 main .results-0 {
@@ -46,4 +47,52 @@ main .results-2 {
 
 main .results-3 {
   width: 200px;
+}
+
+.underline {
+  text-decoration: var(--tertiary) underline;
+}
+
+.under-border {
+  border-bottom: var(--tertiary) solid 3px;
+}
+
+header {
+  text-align: center;
+  margin: 10px 30px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav {
+  padding: 20px;
+  margin: 10px 30px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav > * {
+ width: calc(100vw / 3)
+}
+
+h1, h2, h3, h4, h5, h6 {
+color: var(--headline)
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 10px;
+  color: var(--paragraph);
+  font-size: 1.3rem;
+  font-weight: 400;
+
 }
