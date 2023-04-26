@@ -23,9 +23,9 @@ export default function DataRow(props: Props) {
       <div className="results-2">
         {results.map(letter => (
           <div key={letter.key} className="results-3">
-            <h2>
+            <h3>
               {letter.key}
-            </h2>
+            </h3>
             <div>
               {letter.data.map(i => <div key={i}>{i}</div>)}
             </div>

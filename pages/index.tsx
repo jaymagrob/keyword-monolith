@@ -3,7 +3,7 @@ import Data, { Data as DataType } from '../components/Data';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
-  const [keyword, setKeyword] = useState('');
+  const [keyword, setKeyword] = useState('What are you searcing for?');
   const [data, setData] = useState(null);
 
   return (
@@ -14,16 +14,20 @@ export default function Home() {
           <h1 className="underline">Generate keyword ideas</h1>
           <p>Try entering a keyword or phrase related to your business or industry and explore the insights that the site provides. By understanding the questions and concerns of your audience, you can create content that is more relevant, valuable, and engaging. So go ahead and give it a try – you might just discover new opportunities to connect with your audience and drive more traffic to your website.</p>
         </div>
-        <div>
+        <div className="search-form">
           <form onSubmit={e => e.preventDefault()}>
+            
+
             <input
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
-            />
+              />
             <button
               type="submit"
+              placeholder="What are you searching for?"
               onClick={() => {
-                setIsLoading(true)
+                setData(null);
+                setIsLoading(true);
                 fetch(`/api/google?keyword=${keyword}&country=us&language=en`, {
                   method: 'GET',
                   headers: {
@@ -38,7 +42,8 @@ export default function Home() {
                   .finally(() => setIsLoading(false))
               }
               }
-            >click</button>
+            >Generate Keywords</button>
+            
           </form>
         </div>
       </nav>
