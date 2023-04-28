@@ -28,6 +28,10 @@ body {
   font-weight: 400;
 }
 
+#__next {
+  min-height: 100vh;
+}
+
 main .results-0 {
   padding: 40px;
   background-color:var(--main)
@@ -42,7 +46,6 @@ main .results-2 {
   margin: 20px 0;
   display: flex;
   flex-wrap: wrap;
-  /* width: calc(100vw - 100px); */
   gap: 30px;
   justify-content: space-evenly;
 }
@@ -62,6 +65,10 @@ main .results-3 {
   border-bottom: var(--tertiary) solid 3px;
 }
 
+.upper-border {
+  border-top: var(--tertiary) solid 3px;
+}
+
 header {
   text-align: center;
   margin: 10px 30px;
@@ -77,6 +84,10 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+
+.container {
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -127,13 +138,19 @@ input {
   height: 4rem;
   margin-bottom: 0px;
   padding-left: 20px;
-  border: 3px solid #fff;
+  border: 3px solid var(--background);
   border-radius: 3px;
-  background-color: #fff;
+  background-color: var(--background);
   color: #1f1235;
   font-weight: 700;
   width: 100%;
   flex-grow: 9;
+  transition: border-color 2s ease;
+  transition: font-size 1s ease;
+}
+
+input:hover, input:focus {
+  font-size: 1.1em;
 }
 
 button[type='submit'] {
@@ -142,8 +159,20 @@ button[type='submit'] {
   width: 20rem;
   height: 4rem;
   padding: 5px;
+  transition: font-size 1s ease;
 }
 
+button[type='submit']:hover {
+  font-size: 0.95em;
+}
+
+footer {
+  margin: 10px 30px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px;
+  text-decoration: none;
+}
 
 @media screen and (max-width:768px) {
   /* * {

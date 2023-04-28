@@ -8,6 +8,7 @@ export default function Home() {
 
   return (
     <>
+    <div className='container'>
       <header className="under-border">John&apos;s Keyword Tool</header>
       <nav>
         <div>
@@ -55,6 +56,10 @@ export default function Home() {
           </main>
         )
       }
+      </div>
+      <footer className="upper-border">
+        &copy; 2023 - Magnus Klein Ltd
+      </footer>
     </>
   )
 }
