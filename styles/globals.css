@@ -16,6 +16,10 @@
   --main: #d8eefe;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--paragraph);
   background: var(--background);
@@ -87,6 +91,7 @@ nav {
 }
 
 .container {
+  margin: 0 auto;
   min-height: 100vh;
 }
 
@@ -153,12 +158,14 @@ input:hover, input:focus {
   font-size: 1.1em;
 }
 
-button[type='submit'] {
-  background-color: #ef4565;
-  color: #fffffe;
+select, button[type='submit'] {
   width: 20rem;
   height: 4rem;
   padding: 5px;
+}
+button[type='submit'] {
+  background-color: #ef4565;
+  color: #fffffe;
   transition: font-size 1s ease;
 }
 

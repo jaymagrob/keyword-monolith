@@ -16,7 +16,7 @@ export default function handler(
   } else {
     const { keyword: query, country, language} = req.query;
     return new Promise((resolve, reject) => {
-
+      console.log('here----country', country)
       Word.getWords(query, new GetGoogle(query, country, language).getData)
       .then((data) => {
         res.status(200).json(data)

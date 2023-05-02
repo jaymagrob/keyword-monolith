@@ -31,14 +31,25 @@ export default function Data(props: { data: Data | null }) {
   } = props.data;
 
   return (
-    <div className="results-0">
-      <DataRaw header="alpha" results={alpha} />
-      <DataRaw header="comparisons" results={comparisons} />
-      <DataRaw header="data" results={data} />
-      <DataRaw header="prepositions" results={prepositions} />
-      <DataRaw header="price" results={price} />
-      <DataRaw header="questions" results={questions} />
-      <DataRaw header="top" results={top} />
-    </div>
+    <>
+      <div style={{ position: 'sticky', top: 0 }} className='hello'>
+        <a href="#alpha">alpha</a>
+        <a href="#comparisons">comparisons</a>
+        <a href="#data">data</a>
+        <a href="#prepositions">prepositions</a>
+        <a href="#price">price</a>
+        <a href="#questions">questions</a>
+        <a href="#top">top</a>
+      </div>
+      <div className="results-0" onScroll={(e) => console.log('here45454444')}>
+        <DataRaw header="alpha" results={alpha} />
+        <DataRaw header="comparisons" results={comparisons} />
+        <DataRaw header="data" results={data} />
+        <DataRaw header="prepositions" results={prepositions} />
+        <DataRaw header="price" results={price} />
+        <DataRaw header="questions" results={questions} />
+        <DataRaw header="top" results={top} />
+      </div>
+    </>
   )
 }

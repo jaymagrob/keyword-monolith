@@ -18,7 +18,7 @@ export default function DataRow(props: Props) {
   } = props;
 
   return (
-    <div className="results-1">
+    <div id={header} className="results-1">
       <h2>{header}</h2>
       <div className="results-2">
         {!results.length && "No data available"}
