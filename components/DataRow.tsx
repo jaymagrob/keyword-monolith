@@ -17,6 +17,19 @@ export default function DataRow(props: Props) {
     results,
   } = props;
 
+  const cardVariants = {
+    offscreen: {
+      opacity: 0,
+    },
+    onscreen: {
+      opacity: 1,
+      transition: {
+        type: "spring",
+        duration: 0.8
+      }
+    }
+  };
+
   return (
     <div id={header} className="results-1">
       <h2>{header}</h2>
@@ -24,21 +37,22 @@ export default function DataRow(props: Props) {
         {!results.length && "No data available"}
         {results.map(letter => (
           <motion.div
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 1.1 }}
-            drag="x"
-            dragConstraints={{ left: -100, right: 100 }}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
             key={letter.key}
           >
-            <div key={letter.key} className="results-3">
-              <h3>
-                {letter.key || "Data"}
-              </h3>
-              <div>
-                {!letter.data.length && "No data available"}
-                {letter.data.map(i => <div key={i}>{i}</div>)}
+            <motion.div className="card" variants={cardVariants}>
+              <div key={letter.key} className="results-3">
+                <h3>
+                  {letter.key || "Data"}
+                </h3>
+                <div>
+                  {!letter.data.length && "No data available"}
+                  {letter.data.map(i => <div key={i}>{i}</div>)}
+                </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>
