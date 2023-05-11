@@ -32,7 +32,7 @@ export default function Data(props: { data: Data | null }) {
 
   return (
     <>
-      <div style={{ position: 'sticky', top: 0 }} className='hello'>
+      <div style={{ position: 'sticky', top: 0 }} className='results-nav'>
         <a href="#alpha">alpha</a>
         <a href="#comparisons">comparisons</a>
         <a href="#data">data</a>
